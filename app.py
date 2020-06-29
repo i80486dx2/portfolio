@@ -88,6 +88,15 @@ skills = [
     )
 ]
 
+arm = [
+    html.Video(
+        src='static/servo.mov',
+        style={'width': '100%'},
+        autoPlay=True,
+        loop=True
+    )
+]
+
 sv = [
     dbc.CardImg(src="/static/sv.png", top=True),
     dbc.CardBody(
@@ -184,7 +193,7 @@ cards = html.Div([
         dbc.Card(hobby, color="secondary", inverse=True),
         dbc.Card(sv, color="info", inverse=True),
         dbc.Card(hobby, color="light", inverse=True),
-        dbc.Card(hobby, color="warning", inverse=True),
+        dbc.Card(arm, color="warning", inverse=True),
         dbc.Card(event, color="danger", inverse=True),
         dbc.Card(nz, color="success"),
         dbc.Card(hobby, color="dark", inverse=True),
