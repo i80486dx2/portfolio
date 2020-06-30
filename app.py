@@ -47,7 +47,7 @@ my_img = dbc.CardColumns([
                          dbc.Col(
                              html.A(
                                  html.Img(src=icon,
-                                          height="50px"),
+                                          height="30px"),
                                  href=link
                              )
                          )
@@ -63,6 +63,7 @@ my_img = dbc.CardColumns([
 
 hobby_list = ['ドライブ', 'サイクリング', 'サカナクション', 'KIRINJI']
 hobby = [
+    dbc.CardImg(src="/static/hobby.png", top=True),
     dbc.CardHeader("趣味", style={'font-weight': 'bold'}),
     dbc.CardBody(
         [
@@ -77,26 +78,53 @@ hobby = [
 
 keyword = ['python', 'Raspberry Pi', 'IoT', 'plotly', 'Dash']
 skills = [
-    dbc.CardHeader('キーワード', style={'font-weight': 'bold'}),
+    dbc.CardHeader('キーワード', style={'font-weight': 'bold', 'color': 'black'}),
     dbc.CardBody(
         [
             html.Li(
                 key,
                 className="card-text",
             )
-            for key in keyword]
+            for key in keyword],
+        style={'color': 'black'}
     )
 ]
 
+# video
 arm = [
     html.Video(
         src='static/servo.mov',
         style={'width': '100%'},
         autoPlay=True,
-        loop=True
-    )
+        loop=True,
+        muted=True
+    ),
+    dbc.CardHeader('obnizを用いたサーボの制御', style={'font-weight': 'bold'})
 ]
 
+ai_car = [
+    html.Video(
+        src='static/ai.mov',
+        style={'width': '100%'},
+        autoPlay=True,
+        loop=True,
+        muted=True
+    ),
+    dbc.CardHeader('SOVO代替プロジェクト', style={'font-weight': 'bold'})
+]
+
+cutter = [
+    html.Video(
+        src='static/cutter.mov',
+        style={'width': '100%'},
+        autoPlay=True,
+        loop=True,
+        muted=True
+    ),
+    dbc.CardHeader('レーザーカッターによるアクリル板の切断', style={'font-weight': 'bold'})
+]
+
+# article
 sv = [
     dbc.CardImg(src="/static/sv.png", top=True),
     dbc.CardBody(
@@ -122,6 +150,21 @@ nz = [
             ),
             dbc.Button(dbc.CardLink(
                 'Read more', href='https://docs.google.com/presentation/d/1fwsToLe9pwLEZ9H8nWkKPj5uiYi_l79lv-2rPHA5yOQ/edit?usp=sharing'), color="light"),
+        ]
+    ),
+]
+
+gugen = [
+    dbc.CardImg(src="https://gugen.jp/uploads/20191103095639525.png", top=True),
+    dbc.CardBody(
+        [
+            html.H5("Skeleton recognition", className="card-title"),
+            html.P(
+                "シリコンバレーで生まれた作品をGUGENで展示した。",
+                className="card-text",
+            ),
+            dbc.Button(dbc.CardLink(
+                'Read more', href='https://gugen.jp/entry2019/2019-019'), color="light"),
         ]
     ),
 ]
@@ -161,6 +204,7 @@ for y3 in e_2020:
 data.append(html.Br())
 
 event = [
+    dbc.CardImg(src="/static/presen.png", top=True),
     dbc.CardHeader('出場イベント', style={'font-weight': 'bold'}),
     dbc.CardBody(
         [
@@ -189,14 +233,14 @@ event = [
 cards = html.Div([
     dbc.CardColumns([
         dbc.Card(hobby, color="primary", inverse=True),
-        dbc.Card(skills, color="dark", inverse=True),
-        dbc.Card(hobby, color="secondary", inverse=True),
+        dbc.Card(ai_car, color="secondary", inverse=True),
+        dbc.Card(skills, inverse=True),
+        dbc.Card(cutter, color="secondary", inverse=True),
         dbc.Card(sv, color="info", inverse=True),
-        dbc.Card(hobby, color="light", inverse=True),
-        dbc.Card(arm, color="warning", inverse=True),
+        dbc.Card(gugen, color="warning", inverse=True),
+        dbc.Card(arm, color="secondary", inverse=True),
         dbc.Card(event, color="danger", inverse=True),
-        dbc.Card(nz, color="success"),
-        dbc.Card(hobby, color="dark", inverse=True),
+        dbc.Card(nz, color="success")
     ])
 ])
 
