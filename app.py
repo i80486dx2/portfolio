@@ -134,7 +134,7 @@ sv = [
                 "シリコンバレーに２週間滞在し、現地で企業見学をしたりコワーキングスペースでIoTデバイスを開発したりした。"
             ),
             dbc.Button(dbc.CardLink(
-                'Read more', href='https://i80486dx2.blogspot.com/'), color="light"),
+                'Read more', href='https://i80486dx2.blogspot.com/',target="_blynk"), color="light"),
         ]
     ),
 ]
@@ -149,7 +149,7 @@ nz = [
                 className="card-text",
             ),
             dbc.Button(dbc.CardLink(
-                'Read more', href='https://docs.google.com/presentation/d/1fwsToLe9pwLEZ9H8nWkKPj5uiYi_l79lv-2rPHA5yOQ/edit?usp=sharing'), color="light"),
+                'Read more', href='https://docs.google.com/presentation/d/1fwsToLe9pwLEZ9H8nWkKPj5uiYi_l79lv-2rPHA5yOQ/edit?usp=sharing',target="_blynk"), color="light"),
         ]
     ),
 ]
@@ -164,7 +164,7 @@ gugen = [
                 className="card-text",
             ),
             dbc.Button(dbc.CardLink(
-                'Read more', href='https://gugen.jp/entry2019/2019-019'), color="light"),
+                'Read more', href='https://gugen.jp/entry2019/2019-019',target="_blynk") ,color="light")
         ]
     ),
 ]
